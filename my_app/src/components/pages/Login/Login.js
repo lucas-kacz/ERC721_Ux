@@ -1,11 +1,12 @@
 import {useState} from "react";
 import Card from "../Card/Card";
 import classes from "./Login.module.css";
-import Web3 from "web3";
+
 
 const Login = (props) => {
     
     const [isConnecting, setIsConnecting] = useState(false);
+    const [isConnected, setIsConnected] = useState(false);
 
     const detectProvider = () => {
         let provider;
@@ -42,6 +43,7 @@ const Login = (props) => {
             <button onClick={onLoginHandler} className={classes.button} type="button">
                 {!isConnecting && "Connect"}
                 {isConnecting && "Loading..."}
+
             </button>
         </Card>
     );
