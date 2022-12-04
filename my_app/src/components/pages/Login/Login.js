@@ -43,7 +43,6 @@ const Login = (props) => {
             <button onClick={onLoginHandler} className={classes.button} type="button">
                 {!isConnecting && "Connect"}
                 {isConnecting && "Loading..."}
-
             </button>
         </Card>
     );
