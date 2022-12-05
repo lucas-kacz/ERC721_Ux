@@ -5,7 +5,6 @@ import { Link, Outlet } from "react-router-dom";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import ChainInfo from "../ChainInfo/ChainInfo";
-import Navbar from "../Navbar/Navbar";
 import Web3 from "web3";
 import WrongNetwork from "../Wrong Network/Wrong_network";
 import "./Main.module.css"
