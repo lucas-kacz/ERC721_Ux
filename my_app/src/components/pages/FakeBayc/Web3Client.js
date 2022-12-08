@@ -65,3 +65,13 @@ export const mintToken = async () => {
         .claimAToken()
         .send({ from: selectedAccount });
 };
+
+export const getTokenURI = async () => {
+  if(!isInitialized) {
+      await init();
+  }
+
+  nftContract.methods
+      .tokenURI(25)
+      .call();
+};
