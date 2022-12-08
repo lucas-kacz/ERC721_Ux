@@ -7,15 +7,19 @@ import Home from "../Home/Home";
 import ChainInfo from "../ChainInfo/ChainInfo";
 import Web3 from "web3";
 import WrongNetwork from "../Wrong Network/Wrong_network";
-import "./Main.module.css"
+//import {mintToken, init} from "../FakeBayc/Web3Client";
+import "./Main.module.css";
 
-const Main = (props) => {
+
+export const Main = (props) => {
 
   const [isConnected, setIsConnected] = useState(false);
   const [currentAccount, setCurrentAccount] = useState(null);
   const [chainId, setChainId] = useState("");
   const [lastBlockNumber, setBlockNumber] = useState("");
   const [wrongNetwork, setWrongNetwork] = useState();
+
+  //const [minted, setMinted] = useState(false);
 
   const onLogin = async (provider) => {
     const web3 = new Web3(provider);
@@ -42,6 +46,8 @@ const Main = (props) => {
     setIsConnected(false);
   };
 
+
+
   return (
     <div className="App">
       <header className="main-header">
@@ -56,8 +62,9 @@ const Main = (props) => {
       </header>
       <main>
         {!isConnected && <Login onLogin={onLogin} onLogout={onLogout}/>}
-        {isConnected && <Home currentAccount={currentAccount} />}
+        {/* {isConnected && <Home currentAccount={currentAccount} />} */}
         {isConnected && <ChainInfo chainId={chainId} lastBlockNumber={lastBlockNumber} />}
+        
         <nav>
           <Link to ="/fakebayc">FakeBayc</Link>
         </nav>

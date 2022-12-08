@@ -1,11 +1,10 @@
 import React from "react";
 import { Route, Routes} from "react-router-dom";
-import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Main from "./pages/Main/Main";
 import WrongNetwork from "./pages/Wrong Network/Wrong_network";
-import Wrong_Network from "./pages/Wrong Network/Wrong_network";
 import FakeBayc from "./pages/FakeBayc/FakeBayc";
+
 
 function AppRoutes() {
     return(
@@ -19,3 +18,4 @@ function AppRoutes() {
 }
 
 export default AppRoutes;
+
