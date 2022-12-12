@@ -3,7 +3,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 //import AppRoutes from "../../Routes";
 import Login from "../Login/Login";
-import Home from "../Home/Home";
 import ChainInfo from "../ChainInfo/ChainInfo";
 import Web3 from "web3";
 import WrongNetwork from "../Wrong Network/Wrong_network";
@@ -49,7 +48,7 @@ export const Main = (props) => {
 
 
   return (
-    <div className="App">
+    <div className="Main">
       <header className="main-header">
         <h1>ERC721_UX</h1>
         <nav className="nav">

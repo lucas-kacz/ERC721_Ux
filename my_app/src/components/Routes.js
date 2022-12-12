@@ -4,6 +4,7 @@ import Login from "./pages/Login/Login";
 import Main from "./pages/Main/Main";
 import WrongNetwork from "./pages/Wrong Network/Wrong_network";
 import FakeBayc from "./pages/FakeBayc/FakeBayc";
+import FakeBaycTokenId from "./pages/FakeBayc/TokenId/FakeBaycTokenId";
 
 
 function AppRoutes() {
@@ -12,6 +13,7 @@ function AppRoutes() {
             <Route path="/" element={<Main/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/fakebayc" element={<FakeBayc/>}/>
+            <Route path="/fakebayc/:tokenId" element={<FakeBaycTokenId/>}/>
             <Route path="/wrong-network" element={<WrongNetwork/>}/>
         </Routes>
     );

@@ -48,13 +48,7 @@ export const init = async () =>{
       isInitialized=true;
 };
 
-export const numberOfTokens = async () => {
-    if(!isInitialized){
-        await init();
-    }
 
-    return nftContract.methods.tokenCounter().call();
-};
 
 export const mintToken = async () => {
     if(!isInitialized) {
@@ -66,12 +60,18 @@ export const mintToken = async () => {
         .send({ from: selectedAccount });
 };
 
-export const getTokenURI = async () => {
+export const numberOfTokens = async () => {
   if(!isInitialized) {
       await init();
   }
 
-  nftContract.methods
-      .tokenURI(25)
-      .call();
+  return nftContract.methods.tokenCounter().call();
+};
+
+export const getTokenURI = async (props) => {
+  if(!isInitialized) {
+      await init();
+  }
+
+  return nftContract.methods.tokenURI().call();
 };
