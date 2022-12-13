@@ -4,7 +4,16 @@
 
 html{
   font-family: sans-serif;
-  background : #fff;
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  background-attachment: fixed;
+}
+
+a, div{
+  color: aliceblue;
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body{
@@ -48,6 +57,36 @@ main{
 .nav a{
   text-decoration: none;
   color: white;
+}
+
+.fake_nefturian{
+  text-align: center;
+}
+
+.fake_nefturian button{
+  background-color: #081f2d; 
+  border-radius: 29px; 
+  border: 1px solid #081F2D; 
+  color: white; 
+  font-size: 15px; 
+ padding: 10px 45px; 
+  cursor: pointer; 
+  transition: 0.3s; 
+}
+
+.fake_nefturian button:hover{
+  background-color: white; 
+  color: #081F2D; 
+  border-color: #081F2D; 
+  transition: 0.3s; 
+
+}
+
+.fake_nefturian .back{
+  font-size: 1.2rem;
+  font-weight: bold;
+  top: 10px;
+  position: absolute;
 }
 
 

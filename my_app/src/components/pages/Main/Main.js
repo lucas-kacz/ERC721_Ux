@@ -7,7 +7,7 @@ import ChainInfo from "../ChainInfo/ChainInfo";
 import Web3 from "web3";
 import WrongNetwork from "../Wrong Network/Wrong_network";
 //import {mintToken, init} from "../FakeBayc/Web3Client";
-import "./Main.module.css";
+
 
 
 export const Main = (props) => {
@@ -66,6 +66,7 @@ export const Main = (props) => {
         
         <nav>
           <Link to ="/fakebayc">FakeBayc</Link>
+          <Link to ="/fakenefturians">FakeNefturians</Link>
         </nav>
 
       </main>

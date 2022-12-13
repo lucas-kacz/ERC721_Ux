@@ -37,7 +37,7 @@ function FakeBayc() {
 
 
   return(
-    <div>
+    <div className="fake_nefturian">
         {!minted ? (
           <button onClick={() => claimAToken()}>Mint token</button>
         ) : (
