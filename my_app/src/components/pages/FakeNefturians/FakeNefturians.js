@@ -1,4 +1,3 @@
-import { use } from "chai";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Web3 from "web3";
@@ -38,7 +37,7 @@ function FakeNefturians(){
             
             <nav className="back">
                 <Link to ="/"> Go back to Main page</Link> 
-            </nav>
+            </nav>  
         </div>
     )
 }

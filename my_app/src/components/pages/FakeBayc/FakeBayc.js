@@ -51,7 +51,6 @@ function FakeBayc() {
 
     <br/><br/>
     <Link to ="/fakebayc/:tokenId">FakeBayc</Link>
-
     </div>
   );
 }
