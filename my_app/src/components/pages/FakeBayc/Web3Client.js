@@ -35,11 +35,6 @@ export const init = async () =>{
       const networkId = await web3.eth.net.getId();
       console.log(networkId);
 
-    //   erc20Contract = new web3.eth.Contract(
-    //     NFTContractBuild.abi,
-    //     '0x1dA89342716B14602664626CD3482b47D5C2005E'
-    //   );
-
       nftContract = new web3.eth.Contract(
         NFTContractBuild.abi,
         '0x1dA89342716B14602664626CD3482b47D5C2005E'
@@ -47,7 +42,6 @@ export const init = async () =>{
 
       isInitialized=true;
 };
-
 
 
 export const mintToken = async () => {
@@ -66,12 +60,20 @@ export const numberOfTokens = async () => {
   }
 
   return nftContract.methods.tokenCounter().call();
-};
+};  
 
-export const getTokenURI = async (props) => {
+
+export const name = async () => {
   if(!isInitialized) {
       await init();
   }
 
-  return nftContract.methods.tokenURI().call();
+  return nftContract.methods.name().call();
+};  
+
+export const getTokenURI = async (tokenId) => {
+  if(!isInitialized) {
+      await init();
+  }
+  return nftContract.methods.tokenURI(tokenId).call();
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getTokenURI, init, mintToken, numberOfTokens } from "./Web3Client";
+import { getTokenURI, init, mintToken, name, numberOfTokens, } from "./Web3Client";
 import { Link } from "react-router-dom";
 
 function FakeBayc() {
@@ -19,7 +19,7 @@ function FakeBayc() {
       });
   };
   
-  const fetchBalance = async () =>{
+  const fetchSupply = async () =>{
     numberOfTokens().then(balance => {
       setBalance(balance);
     }).catch(err =>{
@@ -27,13 +27,14 @@ function FakeBayc() {
     })
   };
 
-  const getURI = async (props) =>{
-    getTokenURI(props).then(URI => {
-      setURI(URI);
+  const fetchName = async () =>{
+    name().then(balance => {
+      setBalance(balance);
     }).catch(err =>{
       console.log(err);
     })
   };
+
 
   return(
     <div>
@@ -43,14 +44,12 @@ function FakeBayc() {
           <p>Token minted Succesfully</p> 
         )}
 
-    <p>The total supply of tokens is {balance}</p>
-    <button onClick={() => fetchBalance()}>Refresh balance</button>
+    <br/><br/>
 
-    <p>The token URI is {URI}</p>
-    <input type="text"></input>
-    <button onClick={() => getURI()}>GET URI</button>
+    <button onClick={() => fetchSupply()}>Refresh balance</button>
+    <div className="Supply">{balance}</div>
 
-    <br/>
+    <br/><br/>
     <Link to ="/fakebayc/:tokenId">FakeBayc</Link>
 
     </div>
