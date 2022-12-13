@@ -48,28 +48,34 @@ export const Main = (props) => {
 
 
   return (
-    <div className="Main">
+    <div className="main">
       <header className="main-header">
-        <h1>ERC721_UX</h1>
-        <nav className="nav">
+
+        <nav className="navbar">
           <ul>
-            <li>
-              <a href="/">{currentAccount}</a>
-            </li>
+            <li><Link to ="/fakebayc">FakeBayc</Link></li>
+            <li><Link to ="/fakenefturians">FakeNefturians</Link></li>
           </ul>
           </nav>
       </header>
+
+
       <main>
         {!isConnected && <Login onLogin={onLogin} onLogout={onLogout}/>}
-        {/* {isConnected && <Home currentAccount={currentAccount} />} */}
-        {isConnected && <ChainInfo chainId={chainId} lastBlockNumber={lastBlockNumber} />}
-        
-        <nav>
-          <Link to ="/fakebayc">FakeBayc</Link>
-          <Link to ="/fakenefturians">FakeNefturians</Link>
-        </nav>
-
+        {isConnected && <ChainInfo currentAccount={currentAccount} chainId={chainId} lastBlockNumber={lastBlockNumber} />}
       </main>
+
+      {/* <nav className="navbar">
+        <ul>
+            <li><Link to ="/fakebayc">FakeBayc</Link></li>
+            <li><Link to ="/fakenefturians">FakeNefturians</Link></li>
+        </ul>
+      </nav> */}
+
+
+
+
+        
     </div>
   );
 }

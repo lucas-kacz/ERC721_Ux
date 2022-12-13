@@ -24,7 +24,7 @@ main{
   margin-top: 6rem;
 }
 
-.main-header{
+/* .main-header{
   position: fixed;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@ main{
   align-items: center;
   background-color: #741188;
   padding: 0 2rem;
-}
+} */
 
 .main-header h1{
   color: white;
@@ -89,6 +89,15 @@ main{
   position: absolute;
 }
 
+.navbar li{
+  display: inline;
+  padding: 30px;
+
+}
+
+.navbar ul{
+  text-align: center;
+}
 
 
 
