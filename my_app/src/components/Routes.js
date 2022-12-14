@@ -14,7 +14,7 @@ function AppRoutes() {
             <Route path="/" element={<Main/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/fakebayc" element={<FakeBayc1/>}/>
-            <Route path="/fakebayc/:tokenId" element={<FakeBaycTokenId1/>}/>
+            <Route path="/fakebayc/:id" element={<FakeBaycTokenId1/>}/>
             <Route path="/fakenefturians" element={<FakeNefturians/>}/>
             <Route path="/wrong-network" element={<WrongNetwork/>}/>
         </Routes>

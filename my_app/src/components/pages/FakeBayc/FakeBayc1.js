@@ -10,10 +10,16 @@ function FakeBayc1(){
 
     const [name, setName] = useState();
     const [totalTokenNumber, setTotalTokenNumber] = useState();
+    const[tokenId, setTokenId] = useState("");
+    const[isMinted, setIsMinted] = useState("");
 
     useEffect(()=>{
         getNameAndTotalTokenNumber()
     })
+
+    const handleInput = (event) =>{
+        setTokenId(event.target.value)
+    }
 
     async function getNameAndTotalTokenNumber(){
         let na = await contract.methods.name().call();
@@ -26,6 +32,7 @@ function FakeBayc1(){
     async function mintToken(){
         const accounts = await window.ethereum.request({method :"eth_requestAccounts"});
         await contract.methods.claimAToken().send({from : accounts[0]});
+        setIsMinted(true);
     }
 
 
@@ -36,10 +43,18 @@ function FakeBayc1(){
 
             <br/>
             <button className="test" onClick={mintToken}>Mint Token</button>
+            <br/>
+            <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
+            <br/>
+
+
+            {!isMinted && 
+                <Link to={`/fakebayc/${tokenId}`}>Get Infos</Link>
+            }
 
             <nav className="back">
-                <Link to ="/fakebayc/:tokenId">FakeBayc</Link>
                 <Link to ="/"> Go back to Main page</Link> 
+                {/* <Link to={"/fakebayc/:tokenId"}>Get Infos</Link> */}
             </nav>
         </div>
     )

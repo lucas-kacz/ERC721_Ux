@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { json, Link } from "react-router-dom";
+import { json, Link, useParams } from "react-router-dom";
 import { IpfsImage } from "react-ipfs-image";
 import Web3 from "web3";
 import fakeBayc from "../../../../ContractsAbi/FakeBayc.json"
@@ -7,31 +7,54 @@ import fakeBayc from "../../../../ContractsAbi/FakeBayc.json"
 
 function FakeBaycTokenId1(){
 
-    const[tokenId, setTokenId] = useState("");
+    const[tokenId, setTokenId] = useState(0);
     const[attribute, setAttribute] = useState();
-    const[image, setImage] = useState();
+    const[image, setImage] = useState("");
+    const {id} = useParams();
 
     let web3 = new Web3(window.ethereum);
     var contract = new web3.eth.Contract(fakeBayc.abi, "0x1dA89342716B14602664626CD3482b47D5C2005E");
     
-    const handleInput = (event) =>{
-        setTokenId(event.target.value)
+    useEffect( () => {
+        setTokenId(id);
+    }, [id])
+
+    useEffect( () => {
+        getURI();
+    })
+    // const handleInput = (event) =>{
+    //     setTokenId(event.target.value)
+    // }
+    
+    function goToLeft() {
+        var loc = parseInt(tokenId) - 1;
+        window.location.href = "./" + loc;
     }
 
+    function goToRight() {
+        var loc = parseInt(tokenId) + 1;
+        window.location.href = "./" + loc;
+    }
     async function getURI(){
 
+        if (tokenId >= parseInt(await contract.methods.tokenCounter().call())){
+            alert("Token id does not exist ! Please input a valid token id");
+            throw Error("Out of bounds");
+        }
+        else{
         let URI = await contract.methods.tokenURI(tokenId).call();
         const jsonURI = await fetch(URI).then(response => response.json())
 
         setAttribute(JSON.stringify(jsonURI.attributes))
         setImage(jsonURI.image)
+        }   
     }
 
     return(
-        <div className="fake">
-            <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
-            <br/>
-            <button onClick={getURI}> Get token info</button>
+        <div className="fake_nefturian" >
+            {/* <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
+            <br/> */}
+            {/* <button className="test" onClick={getURI}> Get token info</button> */}
             <br/>
             <div className="Info">{attribute}</div>
             <br/>
@@ -42,6 +65,19 @@ function FakeBaycTokenId1(){
                     <IpfsImage hash={image}/>
                 </>
             }
+
+            <nav className="navigation">
+                <Link to={`/fakebayc/${tokenId-1}`}>Gauche</Link>
+                <Link to={`/fakebayc/${tokenId+1}`}>Droite</Link>
+            </nav>
+
+            <button onClick={() => goToLeft()}>--</button>
+            <button onClick={() => goToRight()}>++</button>
+
+            <nav className="back">
+                <Link to ="/"> Go back to Main page</Link> 
+            </nav>
+
         </div>
     )
 }
