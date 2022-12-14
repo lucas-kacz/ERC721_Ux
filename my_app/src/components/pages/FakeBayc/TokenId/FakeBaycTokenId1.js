@@ -73,8 +73,8 @@ function FakeBaycTokenId1(){
             }
 
             <nav className="navigation">
-                <button onClick={() => goToLeft()}>Gauche</button>
-                <button onClick={() => goToRight()}>Droite</button>
+                <span><button onClick={() => goToLeft()}>Gauche</button></span>
+                <span><button onClick={() => goToRight()}>Droite</button></span>
             </nav>
 
 

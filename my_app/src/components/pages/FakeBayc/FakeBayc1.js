@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Web3 from "web3";
 import fakeBayc from "../../../ContractsAbi/FakeBayc.json"
+import { useNavigate } from "react-router-dom";
 
 let web3 = new Web3(window.ethereum);
 var contract = new web3.eth.Contract(fakeBayc.abi, "0x1dA89342716B14602664626CD3482b47D5C2005E");
 
 function FakeBayc1(){
 
+    const navigate = useNavigate();
     const [name, setName] = useState();
     const [totalTokenNumber, setTotalTokenNumber] = useState();
     const[tokenId, setTokenId] = useState("");
@@ -59,7 +61,8 @@ function FakeBayc1(){
             <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
             <br/>
 
-            <button onClick={() => window.location.href = `/fakebayc/${tokenId}`}>Get data from Id</button>
+            <button onClick={() => navigate(`/fakebayc/${tokenId}`)}>Get data from Id</button>
+
 
         </div>
     )

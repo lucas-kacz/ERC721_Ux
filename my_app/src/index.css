@@ -133,6 +133,13 @@ input:hover {
   padding: 10px;
 }
 
+.navigation{
+  padding: 2em;
+}
+
+.navigation span{
+  margin: 20px;
+}
 
 
 
