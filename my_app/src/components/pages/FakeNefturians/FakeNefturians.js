@@ -34,6 +34,11 @@ function FakeNefturians(){
 
     return(
         <div className="fake_nefturian">
+            
+            <div className="navbar">
+                <span><Link to ="/"> Go back to Main page</Link></span>
+            </div>  
+
             <br/>
             <div>Le prix d'un token est de {pricetoEth} eth</div>
 
@@ -45,12 +50,8 @@ function FakeNefturians(){
 
             <input type="text" value={address} onChange={e=>handleInput(e)}/>
             <br/>
-            <Link to={`/fakenefturians/${address}`}>Get Infos</Link>
-
-            
-            <nav className="back">
-                <Link to ="/"> Go back to Main page</Link> 
-            </nav>  
+            <button onClick={() => window.location.href = `/fakenefturians/${address}`}>Get tokens of address</button>
+        
         </div>
     )
 }

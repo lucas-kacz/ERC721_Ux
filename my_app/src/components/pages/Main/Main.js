@@ -46,36 +46,21 @@ export const Main = (props) => {
   };
 
 
-
   return (
-    <div className="main">
-      <header className="main-header">
-
-        <nav className="navbar">
-          <ul>
-            <li><Link to ="/fakebayc">FakeBayc</Link></li>
-            <li><Link to ="/fakenefturians">FakeNefturians</Link></li>
-          </ul>
-          </nav>
-      </header>
-
-
-      <main>
-        {!isConnected && <Login onLogin={onLogin} onLogout={onLogout}/>}
-        {isConnected && <ChainInfo currentAccount={currentAccount} chainId={chainId} lastBlockNumber={lastBlockNumber} />}
-      </main>
-
-      {/* <nav className="navbar">
+    <div className="navbar">
+      <div className="nav-links">
         <ul>
-            <li><Link to ="/fakebayc">FakeBayc</Link></li>
-            <li><Link to ="/fakenefturians">FakeNefturians</Link></li>
+          <li><Link to ="/fakebayc">FakeBayc</Link></li>
+          <li><Link to ="/fakenefturians">FakeNefturians</Link></li>
+          <li><Link to ="/fakemeebits">FakeMeebits</Link></li>
         </ul>
-      </nav> */}
+      </div>
 
-
-
-
-        
+    <div className="login">
+      {!isConnected && <Login onLogin={onLogin} onLogout={onLogout}/>}
+      {isConnected && <ChainInfo currentAccount={currentAccount} chainId={chainId} lastBlockNumber={lastBlockNumber} />}
+    </div> 
+    
     </div>
   );
 }

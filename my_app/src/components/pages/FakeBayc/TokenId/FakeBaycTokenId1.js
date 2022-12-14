@@ -53,11 +53,16 @@ function FakeBaycTokenId1(){
 
     return(
         <div className="fake_nefturian" >
-            {/* <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
-            <br/> */}
-            {/* <button className="test" onClick={getURI}> Get token info</button> */}
+            <nav className="navbar">
+                <div className="nav-links">
+                    <ul>
+                        <p><Link to ="/"> Go back to Main page</Link></p>
+                    </ul>
+                </div>
+            </nav>
+
             <br/>
-            <div className="Info">{attribute}</div>
+            <div className="info">{attribute}</div>
             <br/>
             
 
@@ -72,11 +77,6 @@ function FakeBaycTokenId1(){
                 <button onClick={() => goToRight()}>Droite</button>
             </nav>
 
-
-
-            <nav className="back">
-                <Link to ="/"> Go back to Main page</Link> 
-            </nav>
 
         </div>
     )

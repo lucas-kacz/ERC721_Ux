@@ -65,10 +65,7 @@ function FakeNefturiansUserAddress(){
             </table>
             <button onClick={getTokens}>Get tokens of this address</button>
         </div>
-
-
     )
-
 }
 
 export default FakeNefturiansUserAddress;

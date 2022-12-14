@@ -38,24 +38,29 @@ function FakeBayc1(){
 
     return(
         <div className="fake_nefturian">
-            <div>{name}</div>
-            <div>{totalTokenNumber}</div>
+            <nav className="navbar">
+                <div className="nav-links">
+                    <ul>
+                        <p><Link to ="/"> Go back to Main page</Link></p>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div>
+                Collection : {name}. 
+                <br/>
+                The total supply is : {totalTokenNumber}
+            </div>
 
             <br/>
-            <button className="test" onClick={mintToken}>Mint Token</button>
+            <button onClick={mintToken}>Mint Token</button>
             <br/>
+
             <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
             <br/>
 
+            <button onClick={() => window.location.href = `/fakebayc/${tokenId}`}>Get data from Id</button>
 
-            {!isMinted && 
-                <Link to={`/fakebayc/${tokenId}`}>Get Infos</Link>
-            }
-
-            <nav className="back">
-                <Link to ="/"> Go back to Main page</Link> 
-                {/* <Link to={"/fakebayc/:tokenId"}>Get Infos</Link> */}
-            </nav>
         </div>
     )
 }

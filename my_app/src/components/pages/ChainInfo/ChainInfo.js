@@ -5,7 +5,7 @@ const ChainInfo = (props) => {
     return ( 
         <Card className={classes.chaininfo}>
             <h1>Welcome, here are some infos</h1>
-            <p>You are connectec with : {props.currentAccount}</p>
+            <p>You are connected with : {props.currentAccount}</p>
             <p> Chain Id : {props.chainId}</p>
             <p>Last block number : {props.lastBlockNumber}</p>
         </Card>
