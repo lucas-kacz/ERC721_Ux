@@ -22,6 +22,7 @@ function FakeBaycTokenId1(){
     useEffect( () => {
         getURI();
     })
+    
     // const handleInput = (event) =>{
     //     setTokenId(event.target.value)
     // }
@@ -67,12 +68,11 @@ function FakeBaycTokenId1(){
             }
 
             <nav className="navigation">
-                <Link to={`/fakebayc/${tokenId-1}`}>Gauche</Link>
-                <Link to={`/fakebayc/${tokenId+1}`}>Droite</Link>
+                <button onClick={() => goToLeft()}>Gauche</button>
+                <button onClick={() => goToRight()}>Droite</button>
             </nav>
 
-            <button onClick={() => goToLeft()}>--</button>
-            <button onClick={() => goToRight()}>++</button>
+
 
             <nav className="back">
                 <Link to ="/"> Go back to Main page</Link> 

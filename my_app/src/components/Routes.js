@@ -6,6 +6,7 @@ import WrongNetwork from "./pages/Wrong Network/Wrong_network";
 import FakeBayc1 from "./pages/FakeBayc/FakeBayc1";
 import FakeBaycTokenId1 from "./pages/FakeBayc/TokenId/FakeBaycTokenId1";
 import FakeNefturians from "./pages/FakeNefturians/FakeNefturians";
+import FakeNefturiansUserAddress from "./pages/FakeNefturians/FakeNefturianUserAddress/FakeNefturiansUserAddress";
 
 
 function AppRoutes() {
@@ -16,6 +17,7 @@ function AppRoutes() {
             <Route path="/fakebayc" element={<FakeBayc1/>}/>
             <Route path="/fakebayc/:id" element={<FakeBaycTokenId1/>}/>
             <Route path="/fakenefturians" element={<FakeNefturians/>}/>
+            <Route path="/fakenefturians/:address" element={<FakeNefturiansUserAddress/>}/>
             <Route path="/wrong-network" element={<WrongNetwork/>}/>
         </Routes>
     );

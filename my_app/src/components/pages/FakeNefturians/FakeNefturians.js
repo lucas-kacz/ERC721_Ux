@@ -9,11 +9,16 @@ var contract = new web3.eth.Contract(fakeNefturians.abi, "0x9bAADf70BD9369F54901
 function FakeNefturians(){
 
     const[price, setPrice] = useState();
-    const[pricetoEth, setPricetoEth] = useState()
+    const[pricetoEth, setPricetoEth] = useState();
+    const[address, setCurrentAddress] = useState("");
 
     useEffect(()=>{
         getPrice();
     })
+
+    const handleInput = (event) =>{
+        setCurrentAddress(event.target.value)
+    }
 
     async function getPrice(){
         let prix = await contract.methods.tokenPrice().call();
@@ -34,6 +39,14 @@ function FakeNefturians(){
 
             <br/>
             <button className="test" onClick={buyToken}>Buy Token</button>
+      
+            <br/>
+            <br/>
+
+            <input type="text" value={address} onChange={e=>handleInput(e)}/>
+            <br/>
+            <Link to={`/fakenefturians/${address}`}>Get Infos</Link>
+
             
             <nav className="back">
                 <Link to ="/"> Go back to Main page</Link> 
