@@ -42,6 +42,7 @@ function FakeNefturiansUserAddress(){
                     <tr>
                         <td>{token.name}</td>
                         <td>{token.description}</td>
+                        <td><a href={token.image}>See Image</a></td>
                     </tr>
                 )
             }
@@ -62,6 +63,7 @@ function FakeNefturiansUserAddress(){
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>See Image</th>
                     </tr>
                 </thead>
                 <tbody>

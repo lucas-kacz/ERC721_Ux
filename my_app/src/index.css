@@ -135,6 +135,11 @@ input:hover {
   padding: 2em;
 }
 
+.table-nefturian th, td{
+  border: 1px solid; 
+  padding: 3px;
+}
+
 .info{
   padding: 10px;
 }

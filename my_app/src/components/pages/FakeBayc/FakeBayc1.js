@@ -58,6 +58,11 @@ function FakeBayc1(){
             <button onClick={mintToken}>Mint Token</button>
             <br/>
 
+            <br/>
+            {isMinted &&
+                <p>Your token Id is {totalTokenNumber-1}</p>
+            }
+
             <input type="number" value={tokenId} onChange={e=>handleInput(e)}/>
             <br/>
 
