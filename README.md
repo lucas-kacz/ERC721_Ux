@@ -1,6 +1,7 @@
 # ERC721_Ux
 
 This project aims to build a simple UX in order to visualize and use ERC721 tokens.
+The app is deployed on this [website](https://erc-721-ux-six.vercel.app/)
 
 ## Installation
 
@@ -29,6 +30,8 @@ The FakeBayc section allows you to mint your own FakeBayc ERC721 Token and see i
 ### FakeNefturians
 
 The FakeNetfurians sections allows you to mint an NFT and see all the NFTs a certain address has. Once minted, you can input your address and see the list you have.
+![Fake Netfurians Token Address](https://user-images.githubusercontent.com/113424948/208170985-d66e26a4-7d03-410f-945a-0a6719b0243f.JPG)
+)
 
 ### FakeMeebits
 The FakeMeebits sections allows you to claim tokens that were not claimed yet. If you try to claim an already claimed token, the transaction will fail and cost much more than a non-claimed token.
