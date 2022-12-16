@@ -129,6 +129,12 @@ input:hover {
   position: absolute;
 }
 
+.table-nefturian{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+
 .info{
   padding: 10px;
 }

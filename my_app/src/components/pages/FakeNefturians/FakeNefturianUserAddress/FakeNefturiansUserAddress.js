@@ -1,6 +1,6 @@
 import { use } from "chai";
 import { useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Web3 from "web3";
 import fakeNefturians from "../../../../ContractsAbi/FakeNefturians.json";
 
@@ -52,7 +52,12 @@ function FakeNefturiansUserAddress(){
 
     return(
         <div className="fake_nefturian">
-            <table>
+
+            <div className="navbar">
+                <span><Link to ="/"> Go back to Main page</Link></span>
+            </div> 
+
+            <table class="table-nefturian">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -63,6 +68,7 @@ function FakeNefturiansUserAddress(){
                     {list}
                 </tbody>
             </table>
+            
             <button onClick={getTokens}>Get tokens of this address</button>
         </div>
     )

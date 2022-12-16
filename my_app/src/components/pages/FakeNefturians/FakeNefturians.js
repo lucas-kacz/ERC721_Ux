@@ -21,8 +21,8 @@ function FakeNefturians(){
     }
 
     async function getPrice(){
-        let prix = await contract.methods.tokenPrice().call();
-        setPrice(prix)
+        let price = await contract.methods.tokenPrice().call();
+        setPrice(price*1.00001)
         setPricetoEth(web3.utils.fromWei(String(price)));
         console.log(pricetoEth);
     }

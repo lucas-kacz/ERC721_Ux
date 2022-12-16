@@ -16,7 +16,6 @@ export const Main = (props) => {
   const [currentAccount, setCurrentAccount] = useState(null);
   const [chainId, setChainId] = useState("");
   const [lastBlockNumber, setBlockNumber] = useState("");
-  const [wrongNetwork, setWrongNetwork] = useState();
 
   //const [minted, setMinted] = useState(false);
 

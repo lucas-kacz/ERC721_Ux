@@ -6,8 +6,7 @@ function FakeBayc() {
 
   const [minted, setMinted] = useState(false);
   const [balance, setBalance] = useState(0);
-  const [URI, setURI] = useState("");
-
+  
   const claimAToken = () => {
     mintToken()
       .then(tx => {

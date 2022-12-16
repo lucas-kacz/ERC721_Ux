@@ -6,7 +6,7 @@
     text-align: center;
   }
 
-  .button{
+  /* .button{
     font: inherit;
     border: 1px solid #4f005f;
     background: #4f005f;
@@ -34,4 +34,23 @@
     border-color: #ccc;
     color: #666666;
     cursor: not-allowed;
+  } */
+
+  .button{
+    background-color: #081f2d; 
+    border-radius: 29px; 
+    border: 1px solid #081F2D; 
+    color: white; 
+    font-size: 15px; 
+   padding: 10px 45px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+  }
+  
+  .button:hover{
+    background-color: white; 
+    color: #081F2D; 
+    border-color: #081F2D; 
+    transition: 0.3s; 
+  
   }
