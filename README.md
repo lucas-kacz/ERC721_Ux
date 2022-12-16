@@ -2,14 +2,14 @@
 
 This project aims to build a simple UX in order to visualize and use ERC721 tokens.
 
-##Installation
+## Installation
 
 If you want to run the project on your own machine follow these steps :
   - Clone the repo
   - cd to my_app by typing
   - `npm start`to run the project. A new tab should open in your web browser.
   
-##How to use it ?
+## How to use it ?
 
 Once opened you should be greeted with this welcome page
 
@@ -18,16 +18,18 @@ Once opened you should be greeted with this welcome page
 Then you need to connect to your Metamask on the Sepolia network. Otherwise the app won't work.
 Once connected you can use the different pages on the navbar on top.
 
-###FakeBayc
+## Sections
+
+### FakeBayc
 
 The FakeBayc section allows you to mint your own FakeBayc ERC721 Token and see it directly on the app by typing the Id of the NFT below the mint button. If you just minted it, your token Id should be the total supply-1, once the transaction is validated. You can then navigate and see all the others minted NFTs
 
 ![FakeBayc Display](https://user-images.githubusercontent.com/113424948/208080409-47c473ed-4103-478d-bd8e-5659d49bece1.JPG)
 
-###FakeNefturians
+### FakeNefturians
 
 The FakeNetfurians sections allows you to mint an NFT and see all the NFTs a certain address has. Once minted, you can input your address and see the list you have.
 
-###FakeMeebits
+### FakeMeebits
 The FakeMeebits sections allows you to claim tokens that were not claimed yet. If you try to claim an already claimed token, the transaction will fail and cost much more than a non-claimed token.
 
