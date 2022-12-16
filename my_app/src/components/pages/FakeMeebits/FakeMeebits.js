@@ -1,4 +1,3 @@
-import { use } from "chai";
 import { useEffect, useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import Web3 from "web3";
